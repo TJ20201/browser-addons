@@ -1,6 +1,6 @@
 {
     "name": "Cute Pet Pictures",
-    "version": "0.0.1-DEV",
+    "version": "0.0.1",
     "manifest_version": 2,
     "description": "This addon shows you a random cute pet picture from the internet when you press a button.",
     "icons": {
