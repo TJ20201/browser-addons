@@ -2,5 +2,11 @@
     "name": "Cute Pet Pictures",
     "version": "0.0.1-DEV",
     "manifest_version": 2,
-    "description": "This addon shows you a random cute pet picture from the internet when you press a button."
+    "description": "This addon shows you a random cute pet picture from the internet when you press a button.",
+    "icons": {
+        "32": "icons/ppicon_32x32.png",
+        "48": "icons/ppicon_48x48.png",
+        "64": "icons/ppicon_64x64.png",
+        "128": "icons/ppicon_128x128.png"
+    }
 }
