@@ -1,22 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <script>
-            var key="563492ad6f91700001000001cbf2f9b601b54cfc94dd6d78843a0d2b";
-            function getImage() {
-                // Get PEXELs Image
-                var erequest = new XMLHttpRequest();
-                var page = Math.random()*250
-                erequest.open("GET", "https://api.pexels.com/v1/search?query=cute+pets&page="+page.toString()+"&per_page=1", false);
-                erequest.setRequestHeader("Authorization", key);  
-                erequest.send();
-                var res = JSON.parse(erequest.response);
-                var photo = res.photos[0].src;
-                var raw = photo.original;
-                console.log(raw)
-                document.getElementById("image").src=raw
-            }
-        </script>
+        <script src="popup.js"></script>
         <style>
             body {
                 width: 500px;
@@ -40,7 +25,7 @@
                 font-size: 16px;
                 border-radius: 3px;
                 transition-duration:100ms;
-                margin-left: 125px;margin-right: 125px;
+                margin-left: 37.5%;margin-right: 37.5%;
 
             }
             button:hover {
@@ -52,10 +37,6 @@
                 color: #ffffff;
                 transform: translate(1px, 1px);
             }
-            div {
-                justify-items: center;
-                align-items: center;
-            }
             a {
                 color: #ffffff;
                 text-decoration: none;
@@ -64,10 +45,10 @@
             }
         </style>
     </head>
-    <body onload="getImage()">
+    <body>
         <div>
-            <img src="" alt="Image" id="image" width="400" height="400" /><br>
-            <button id="gi" onclick="getImage()">Reload</button>
+            <img alt="Image" id="image" width="400" height="400" /><br>
+            <button id="gi">Reload</button>
         </div>
         <hr>
         <a href="https://www.pexels.com">
