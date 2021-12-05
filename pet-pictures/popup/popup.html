@@ -1,12 +1,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Cute Pet Pictures Addon - Picture Popup</title>
+        <script>
+            var key="563492ad6f91700001000001cbf2f9b601b54cfc94dd6d78843a0d2b";
+            function getImage() {
+                // Get PEXELs Image
+                var erequest = new XMLHttpRequest();
+                var page = Math.random()*250
+                erequest.open("GET", "https://api.pexels.com/v1/search?query=cute+pets&page="+page.toString()+"&per_page=1", false);
+                erequest.setRequestHeader("Authorization", key);  
+                erequest.send();
+                var res = JSON.parse(erequest.response);
+                var photo = res.photos[0].src;
+                var raw = photo.original;
+                console.log(raw)
+                document.getElementById("image").src=raw
+            }
+        </script>
         <style>
             body {
                 width: 500px;
                 background-color: #333333;
                 color: #ffffff;
+                justify-items: center;
+                align-items: center;
+                width: 400px;
+            }
+            img {
+                background-color: #222222;
+                border-color: #222222;
+                border-radius: 5px;
             }
             button {
                 background-color: #474747;
@@ -16,22 +39,40 @@
                 text-align: center;
                 font-size: 16px;
                 border-radius: 3px;
-                transition-duration:50ms
+                transition-duration:100ms;
+                margin-left: 125px;margin-right: 125px;
+
             }
             button:hover {
-                background-color: #363636;
+                background-color: #696969;
                 color: #ffffff;
             }
             button:active {
                 background-color: #585858;
                 color: #ffffff;
+                transform: translate(1px, 1px);
+            }
+            div {
+                justify-items: center;
+                align-items: center;
+            }
+            a {
+                color: #ffffff;
+                text-decoration: none;
+                font-family: monospace;
+                font-size: 3ch;
             }
         </style>
     </head>
-    <body>
+    <body onload="getImage()">
         <div>
-            <img src="" alt="Image" />
-            <button id="reload">Reload</button>
+            <img src="" alt="Image" id="image" width="400" height="400" /><br>
+            <button id="gi" onclick="getImage()">Get Image</button>
         </div>
+        <hr>
+        <a href="https://www.pexels.com">
+          <span id="wm">Images provided by </span><img src="https://images.pexels.com/lib/api/pexels-white.png" alt="Images provided by Pexels" width="35" height="13"/>
+        </a>
+        <noscript>This requires JavaScript to run.</noscript>
     </body>
 </html>
