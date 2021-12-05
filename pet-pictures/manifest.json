@@ -2,7 +2,7 @@
     "name": "Cute Pet Pictures",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "This addon shows you a random picture of a pet from the internet when you click on the addon.",
+    "description": "This addon shows you a random picture of a pet from Pexels by clicking it (also has a Reload button for getting a new image)",
     "icons": {
         "32": "icons/ppicon_32x32.png",
         "48": "icons/ppicon_48x48.png",
