@@ -1,2 +1,2 @@
-# ADDON: Pet Pictures
-This addon shows you a random pet picture when you click it, and also comes with a *Reload* button.
+# Addon: Cute Pet Pictures
+This addon can show you 7000 different pictures of pets with a click of a button. (Well, a click on the extension button or the extension's **Reload** button.)
